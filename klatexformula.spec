@@ -1,24 +1,25 @@
 Summary: Easily get an image from a LaTeX formula
-Name: klatexformula
+Name: 	 klatexformula
 Version: 3.0.1
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://ovh.dl.sourceforge.net/sourceforge/klatexformula/%name-%version.tar.gz
-Patch0: klatexformula-3.0.1-shared.patch
-Patch1: klatexformula-3.0.1-lib464.patch
+Patch0:  klatexformula-3.0.1-shared.patch
+Patch1:  klatexformula-3.0.1-lib464.patch
 License: GPLv2+
-Group: Office
-Url: http://klatexformula.sourceforge.net/
+Group: 	 Office
+Url: 	 http://klatexformula.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Requires:  ghostscript, tetex-latex, tetex-dvips
 BuildRequires: qt4-devel
 
 %description
 KLatexFormula is a program to easily get an image from a LaTeX formula.
 It is based on LaTeX.
 
-With KLatexFormula, just enter a formula, click "Evaluate", then you
-can drag&drop or copy the resulting image to another location (an
-OpenOffice document, for example) or save it as an image (many formats
-are available).
+With KLatexFormula, just enter a formula and click "Evaluate"; you can
+then drag and drop or copy the resulting image to another location
+(such as an OpenOffice document, for example) or save it as an image
+(many formats are available).
 
 %files
 %defattr(-,root,root)
