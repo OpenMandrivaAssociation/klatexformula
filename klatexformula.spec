@@ -1,10 +1,11 @@
 Summary: Easily get an image from a LaTeX formula
 Name: 	 klatexformula
 Version: 3.0.1
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: http://ovh.dl.sourceforge.net/sourceforge/klatexformula/%name-%version.tar.gz
 Patch0:  klatexformula-3.0.1-shared.patch
 Patch1:  klatexformula-3.0.1-lib464.patch
+Patch2:  top-level-window.patch
 License: GPLv2+
 Group: 	 Office
 Url: 	 http://klatexformula.sourceforge.net/
@@ -67,6 +68,7 @@ This package contains development files for KLatexFormula.
 %if "%_lib" == "lib64"
 %patch1 -p0
 %endif
+%patch2 -p0
 
 %build
 %qmake_qt4
