@@ -6,6 +6,7 @@ Source0: http://ovh.dl.sourceforge.net/sourceforge/klatexformula/%name-%version.
 Patch0:  klatexformula-3.0.1-shared.patch
 Patch1:  klatexformula-3.0.1-lib464.patch
 Patch2:  top-level-window.patch
+Patch3:  gcc-4.4.patch
 License: GPLv2+
 Group: 	 Office
 Url: 	 http://klatexformula.sourceforge.net/
@@ -69,6 +70,7 @@ This package contains development files for KLatexFormula.
 %patch1 -p0
 %endif
 %patch2 -p0
+%patch3 -p0
 
 %build
 %qmake_qt4
