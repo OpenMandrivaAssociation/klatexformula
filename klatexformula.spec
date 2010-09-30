@@ -1,25 +1,21 @@
-%define name	klatexformula
-%define version 3.1.2
-%define release 1
-
 %define major 3
-%define libname %mklibname klfbackend %major
+%define libname %mklibname %{name} %major
 %define develname %name-devel
 
 Summary:	Easily get an image from a LaTeX formula
-Name:		%{name}
-Version:	%{version}
-Release:	%mkrel %{release}
+Name:		klatexformula
+Version:	3.2.0
+Release:	%mkrel 1
 Source0:	http://ovh.dl.sourceforge.net/sourceforge/klatexformula/%name-%version.tar.gz
-Patch0:		klatexformula-no-undefined-3.1.2.patch
-Patch1:		klatexformula-shared-3.1.2.patch
+Patch0:		klatexformula-3.2.0-link.patch
 License:	GPLv2+
 Group:		Publishing
 Url:		http://klatexformula.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	%{libname} = %{version}-%{release}
 Requires:	ghostscript, tetex-latex, tetex-dvips
-BuildRequires:	qt4-devel
+Requires:	%{libname} = %{version}
+BuildRequires:	kdelibs4-devel
+Obsoletes:	%{_lib}klfbackend3 < 3.2.0
 
 %description
 This application provides an easy-to-use graphical user interface
@@ -33,6 +29,7 @@ and a C++ library are provided to perform the same job.
 %package -n %libname
 Summary:	Shared libraries for KLatexFormula
 Group:		Publishing
+Obsoletes:	%{_lib}klfbackend3 < %{version}
 
 %description -n %libname
 This package contains shared libraries for KLatexFormula.
@@ -48,15 +45,14 @@ This package contains development files for KLatexFormula.
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p0
-%patch1 -p0
 
 %build
-%qmake_qt4
+%cmake_kde4 -DKLF_LIBKLFBACKEND_STATIC=OFF -DKLF_LIBKLFTOOLS_STATIC=OFF -DKLF_LIBKLFAPP_STATIC=OFF
 %make
 
 %install
 %__rm -rf %{buildroot}
-make install INSTALL_ROOT=%{buildroot}
+%makeinstall_std -C build
 
 %clean
 %__rm -rf %{buildroot}
@@ -64,17 +60,21 @@ make install INSTALL_ROOT=%{buildroot}
 %files
 %defattr(-,root,root)
 %doc README
-%{_bindir}/*
-%{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/*
+%{_kde_bindir}/*
+%{_kde_iconsdir}/hicolor/*/apps/%{name}.png
+%{_kde_datadir}/applications/%{name}.desktop
+%{_kde_datadir}/%{name}
+%{_kde_libdir}/kde4/*.so
+%{_kde_services}/*.desktop
+%{_kde_appsdir}/ktexteditor_klf
+%{_kde_datadir}/mime/packages/*.xml
+%{_kde_datadir}/pixmaps/*.png
 
 %files -n %libname
 %defattr(-,root,root)
-%{_libdir}/*.so.%{major}
-%{_libdir}/*.so.%{major}.*
+%{_kde_libdir}/*.so.*
 
 %files -n %develname
 %defattr(-,root,root)
-%{_libdir}/*.so
-%{_includedir}/*.h
+%{_kde_includedir}/*
+%{_kde_libdir}/*.so
