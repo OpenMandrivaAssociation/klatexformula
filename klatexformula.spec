@@ -4,7 +4,7 @@
 
 Summary:	Easily get an image from a LaTeX formula
 Name:		klatexformula
-Version:	3.2.0
+Version:	3.2.1
 Release:	%mkrel 1
 Source0:	http://ovh.dl.sourceforge.net/sourceforge/klatexformula/%name-%version.tar.gz
 Patch0:		klatexformula-3.2.0-link.patch
@@ -15,6 +15,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	ghostscript, tetex-latex, tetex-dvips
 Requires:	%{libname} = %{version}
 BuildRequires:	kdelibs4-devel
+BuildRequires:	help2man
 Obsoletes:	%{_lib}klfbackend3 < 3.2.0
 
 %description
@@ -64,6 +65,7 @@ This package contains development files for KLatexFormula.
 %{_kde_iconsdir}/hicolor/*/apps/%{name}.png
 %{_kde_datadir}/applications/%{name}.desktop
 %{_kde_datadir}/%{name}
+%{_kde_mandir}/man1/*
 %{_kde_libdir}/kde4/*.so
 %{_kde_services}/*.desktop
 %{_kde_appsdir}/ktexteditor_klf
