@@ -1,2 +1,4 @@
+removed_sources:
+  klatexformula-3.2.5.tar.gz: 35ae581d0d79a38779895238b6b9d624e7962187
 sources:
-  "klatexformula-3.2.5.tar.gz:"	35ae581d0d79a38779895238b6b9d624e7962187
+  klatexformula-3.2.6.tar.gz: 5a830a416b4a10c5306bd55c34693fb674dd3c1e

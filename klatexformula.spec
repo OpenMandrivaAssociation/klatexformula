@@ -4,14 +4,13 @@
 
 Summary:	Easily get an image from a LaTeX formula
 Name:		klatexformula
-Version:	3.2.5
+Version:	3.2.6
 Release:	1
-Source0:	http://ovh.dl.sourceforge.net/sourceforge/klatexformula/%name-%version.tar.gz
+Source0:	http://freefr.dl.sourceforge.net/project/%name/%name/%name-%version/%name-%version.tar.gz
 Patch0:		klatexformula-3.2.0-link.patch
 License:	GPLv2+
 Group:		Publishing
 Url:		http://klatexformula.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	ghostscript, tetex-latex, tetex-dvips
 Requires:	%{libname} = %{version}
 BuildRequires:	kdelibs4-devel
@@ -80,3 +79,47 @@ This package contains development files for KLatexFormula.
 %defattr(-,root,root)
 %{_kde_includedir}/*
 %{_kde_libdir}/*.so
+
+
+%changelog
+* Thu May 10 2012 Lev Givon <lev@mandriva.org> 3.2.5-1
++ Revision: 798101
+- Update to 3.2.5.
+
+* Mon Jul 11 2011 Lev Givon <lev@mandriva.org> 3.2.4-1
++ Revision: 689507
+- Update to 3.2.4.
+
+  + Funda Wang <fwang@mandriva.org>
+    - new version 3.2.3
+
+* Sun Dec 05 2010 Funda Wang <fwang@mandriva.org> 3.2.2-1mdv2011.0
++ Revision: 609867
+- update to new version 3.2.2
+
+* Mon Oct 04 2010 Funda Wang <fwang@mandriva.org> 3.2.1-1mdv2011.0
++ Revision: 582928
+- new version 3.2.1
+
+* Thu Sep 30 2010 Funda Wang <fwang@mandriva.org> 3.2.0-1mdv2011.0
++ Revision: 582158
+- New version 3.2.0
+
+* Sun Nov 29 2009 Lev Givon <lev@mandriva.org> 3.1.2-1mdv2010.1
++ Revision: 471555
+- Update to 3.1.2.
+
+* Thu May 28 2009 Lev Givon <lev@mandriva.org> 3.0.1-3mdv2010.0
++ Revision: 380447
+- Add patch from author to make symbol/library windows be displayed as
+  top-level objects.
+
+* Thu May 07 2009 Lev Givon <lev@mandriva.org> 3.0.1-2mdv2010.0
++ Revision: 372956
+- Require ghostscript, tetex-latex, and tetex-dvips.
+
+* Mon May 04 2009 Funda Wang <fwang@mandriva.org> 3.0.1-1mdv2010.0
++ Revision: 371541
+- import klatexformula
+
+
