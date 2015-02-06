@@ -5,7 +5,7 @@
 Summary:	Easily get an image from a LaTeX formula
 Name:		klatexformula
 Version:	3.2.6
-Release:	1
+Release:	2
 Source0:	http://freefr.dl.sourceforge.net/project/%name/%name/%name-%version/%name-%version.tar.gz
 Patch0:		klatexformula-3.2.0-link.patch
 License:	GPLv2+
