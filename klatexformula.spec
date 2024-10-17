@@ -10,7 +10,7 @@ Source0:	http://freefr.dl.sourceforge.net/project/%name/%name/%name-%version/%na
 Patch0:		klatexformula-3.2.0-link.patch
 License:	GPLv2+
 Group:		Publishing
-Url:		http://klatexformula.sourceforge.net/
+Url:		https://klatexformula.sourceforge.net/
 Requires:	ghostscript, tetex-latex, tetex-dvips
 Requires:	%{libname} = %{version}
 BuildRequires:	kdelibs4-devel
