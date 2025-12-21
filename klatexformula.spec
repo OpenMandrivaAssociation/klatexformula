@@ -13,6 +13,7 @@ Group:		Publishing
 Url:		https://klatexformula.sourceforge.net/
 Requires:	ghostscript, tetex-latex, tetex-dvips
 Requires:	%{libname} = %{version}
+BuildRequires:	make
 BuildRequires:	kdelibs4-devel
 BuildRequires:	help2man
 Obsoletes:	%{_lib}klfbackend3 < 3.2.0
